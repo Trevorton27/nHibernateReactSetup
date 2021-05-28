@@ -14,8 +14,8 @@ class RegistrationForm extends React.Component {
 
   componentDidMount() {
     if (this.props.user) {
-      const { id, name, document, email, phone } = this.props.user;
-      this.setState({ id, name, document, email, phone });
+      const { id, name, company, email, phone } = this.props.user;
+      this.setState({ id, name, company, email, phone });
     }
   }
 
@@ -32,7 +32,7 @@ class RegistrationForm extends React.Component {
       },
       body: JSON.stringify({
         name: this.state.name,
-        document: this.state.document,
+        company: this.state.company,
         email: this.state.email,
         phone: this.state.phone
       })
@@ -54,7 +54,7 @@ class RegistrationForm extends React.Component {
       },
       body: JSON.stringify({
         name: this.state.name,
-        document: this.state.document,
+        company: this.state.company,
         email: this.state.email,
         phone: this.state.phone
       })
@@ -79,12 +79,12 @@ class RegistrationForm extends React.Component {
           />
         </FormGroup>
         <FormGroup>
-          <Label for='document'>Document:</Label>
+          <Label for='document'>Company:</Label>
           <Input
             type='text'
             name='document'
             onChange={this.onChange}
-            value={this.state.document === null ? '' : this.state.document}
+            value={this.state.company === null ? '' : this.state.company}
           />
         </FormGroup>
         <FormGroup>

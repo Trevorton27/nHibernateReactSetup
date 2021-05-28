@@ -10,7 +10,7 @@ namespace nHibernateReactSetup.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("ReactPolicy")]
+
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;

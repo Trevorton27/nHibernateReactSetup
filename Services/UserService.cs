@@ -13,7 +13,7 @@ namespace nHibernateReactSetup.Services
         private static readonly string[] names = new string[] { "Jonathan", "Mary", "Susan", "Joe", "Paul", "Carl", "Amanda", "Neil" };
         private static readonly string[] surnames = new string[] { "Smith", "O'Neil", "MacDonald", "Gay", "Bailee", "Saigan", "Strip", "Spenser" };
         private static readonly string[] extensions = new string[] { "@gmail.com", "@hotmail.com", "@outlook.com", "@icloud.com", "@yahoo.com" };
-
+        private static readonly string[] companies = { "Bananas R us", "Microsoft", "Github", "Reddit", "BobTheBuilder", "Google", "The Pink Elephant" };
         static UserService()
         {
             Random rnd = new Random();
@@ -25,7 +25,7 @@ namespace nHibernateReactSetup.Services
                     Id = Count++,
                     Name = currName + " " + surnames[rnd.Next(surnames.Length)],
                     Email = currName.ToLower() + extensions[rnd.Next(extensions.Length)],
-                    Document = (rnd.Next(0, 100000) * rnd.Next(0, 100000)).ToString().PadLeft(10, '0'),
+                    Company = companies[rnd.Next(companies.Length)],
                     Phone = "+1 888-452-1232"
                 };
 
@@ -56,7 +56,7 @@ namespace nHibernateReactSetup.Services
             User found = users.Where(n => n.Id == id).FirstOrDefault();
             found.Name = user.Name;
             found.Email = user.Email;
-            found.Document = user.Document;
+            found.Company = user.Company;
             found.Phone = user.Phone;
         }
 

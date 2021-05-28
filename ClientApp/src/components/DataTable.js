@@ -31,7 +31,7 @@ class DataTable extends Component {
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Document</th>
+            <th>Company</th>
             <th>Phone</th>
             <th style={{ textAlign: 'center' }}>Actions</th>
           </tr>
@@ -49,7 +49,7 @@ class DataTable extends Component {
                 <th scope='row'>{item.id}</th>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
-                <td>{item.document}</td>
+                <td>{item.company}</td>
                 <td>{item.phone}</td>
                 <td align='center'>
                   <div>

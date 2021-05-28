@@ -17,6 +17,7 @@ class Home extends Component {
   getItems = async () => {
     const response = await axios.get(USERS_API_URL);
     console.log('response: ', response);
+    this.setState({ items: response.data });
 
     // fetch(USERS_API_URL)
     // .then(res => res.json())
@@ -44,7 +45,7 @@ class Home extends Component {
       <Container style={{ paddingTop: '100px' }}>
         <Row>
           <Col>
-            <h3>My First React + ASP.NET CRUD React</h3>
+            <h3>SDMM ASP.NET + React CRUD App</h3>
           </Col>
         </Row>
         <Row>
